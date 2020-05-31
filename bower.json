@@ -1,0 +1,19 @@
+{
+  "name": "mini-site",
+  "version": "1.0.0",
+  "license": "Apache",
+  "main": [
+    "./main.js",
+    "css/bootstrap-pincode-input.js"
+  ],
+  "ignore":  [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "latest"
+  }
+}
