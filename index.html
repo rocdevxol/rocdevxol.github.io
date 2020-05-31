@@ -1,7 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link href="./css/bootstrap-pincode-input.css" rel="stylesheet">
+	<title>Key Activate</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap-pincode-input.js"></script>
+	<script src="./js/keygen.js"></script>
+
+	<script>
+	$(document).ready(function() {
+		$('#pincode-input').pincodeInput({hidedigits:false, inputs:5, inputclass:'form-control-lg', named:'input',complete:function(value, e, errorElement){
+				// check the code
+                if(value >= "65535"){
+            		$(errorElement).html("Код должен быть меньше 65535");
+            	} else {
+                    $(errorElement).hide();
+                    getKeys();
+                    $('#pincode-output-user').pincodeInput().data('plugin_pincodeInput').reversePrintText();
+                    $('#pincode-output-admin').pincodeInput().data('plugin_pincodeInput').reversePrintText();
+            	}
+            }});
+            $('#pincode-output-user').pincodeInput({hidedigits:false,inputs:5,inputclass:'form-control-lg', named:'user'});
+            $('#pincode-output-admin').pincodeInput({hidedigits:false,inputs:5,inputclass:'form-control-lg', named:'admin'});
+        });
+    </script>
+</head>
+
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    <div class="container">
+        <h2>Активатор допуска</h2>
+        <br>
+        <h4>Ключ</h4>
+        <div style="width:400px;">
+            <div class="text-danger pincode-input-error"></div>
+            <input type="text" id="pincode-input" value="" style="display: none;">
+        </div>
+
+        <br>
+        <h4>Пользователь</h4>
+        <div style="width:400px;">
+            <input type="text" id="pincode-output-user" value="00000" style="display: none;">
+        </div>
+
+        <br>
+        <h4>Администратор</h4>
+        <div style="width:400px;">
+            <input type="text" id="pincode-output-admin" value="00000" style="display: none;">
+        </div>
+    </div>
 </body>
+ <!-- https://www.jqueryscript.net/form/telephone-pincode-input-lettering.html -->
 </html>
