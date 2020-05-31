@@ -1,0 +1,27 @@
+{
+  "name": "rocdevxol.github.io",
+  "version": "1.0.0",
+  "description": "Web site for holodmash",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "lite-server",
+    "prebuild": "npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rocdevxol/rocdevxol.github.io.git"
+  },
+  "keywords": [
+    "pincode"
+  ],
+  "author": "Eugeniy Zaytsev",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/rocdevxol/rocdevxol.github.io/issues"
+  },
+  "homepage": "https://github.com/rocdevxol/rocdevxol.github.io#readme",
+  "devDependencies": {
+    "lite-server": "^2.5.4"
+  }
+}
