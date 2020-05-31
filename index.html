@@ -28,6 +28,7 @@
             }});
             $('#pincode-output-user').pincodeInput({hidedigits:false,inputs:5,inputclass:'form-control-lg', named:'user'});
             $('#pincode-output-admin').pincodeInput({hidedigits:false,inputs:5,inputclass:'form-control-lg', named:'admin'});
+            // см 218 строку
         });
     </script>
 </head>
@@ -39,19 +40,20 @@
         <h4>Ключ</h4>
         <div style="width:400px;">
             <div class="text-danger pincode-input-error"></div>
-            <input type="text" id="pincode-input" value="" style="display: none;">
+            <input type="text" id="pincode-input" value="">
         </div>
 
         <br>
         <h4>Пользователь</h4>
         <div style="width:400px;">
-            <input type="text" id="pincode-output-user" value="00000" style="display: none;">
+            <input type="text" id="pincode-output-user" value="00000">
         </div>
 
         <br>
         <h4>Администратор</h4>
         <div style="width:400px;">
-            <input type="text" id="pincode-output-admin" value="00000" style="display: none;">
+            <input type="text" id="pincode-output-admin" value="00000" >
+            <!--style="display: none;"-->
         </div>
     </div>
 </body>

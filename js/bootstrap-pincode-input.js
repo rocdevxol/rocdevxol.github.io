@@ -215,7 +215,7 @@
 			}
 			
 			// hide original element and place this before it
-			$(this.element).css("display", "none");
+			//$(this.element).css("display", "none");
 			this._container.insertBefore(this.element);
 
 			// error box
