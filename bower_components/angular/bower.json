@@ -1,0 +1,10 @@
+{
+  "name": "angular",
+  "version": "1.7.9",
+  "license": "Apache",
+  "main": "./angular.js",
+  "ignore": [],
+  "dependencies": {
+    "jquery":">=3.5.1"
+  }
+}
