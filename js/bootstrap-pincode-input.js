@@ -67,18 +67,20 @@
 		reversePrintText: function() {
 			var currentValue = [];
 
-			if (this.settings.hidedigits == false && $(this.element).val() != "") {
-				currentValue = $(this.element).val().split("");
-			}
 			if (this._isTouchDevice()){
-				var inputs = this._container.children().eq(0).children().eq(1).children();
+				var inputs = this._container.children().eq(0).children().eq(0);
+				inputs.val($(this.element).val());
 			} else {
+				if (this.settings.hidedigits == false && $(this.element).val() != "") {
+					currentValue = $(this.element).val().split("");
+				}
+
 				var inputs = this._container.children();
+				for (var i = 0; i < this.settings.inputs; i++) {
+					inputs.eq(i).val(currentValue[i]);
+				}
 			}
 
-			for (var i = 0; i < this.settings.inputs; i++) {
-				inputs.eq(i).val(currentValue[i]);
-			}
 		},
 		updateOriginalInput: function () {
 			var newValue = "";
