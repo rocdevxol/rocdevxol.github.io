@@ -15,7 +15,7 @@
 
 	<script>
 	$(document).ready(function() {
-		$('#pincode-input').pincodeInput({hidedigits:false, inputs:5, inputclass:'form-control-lg', named:'input',complete:function(value, e, errorElement){
+		$('#pincode-input').pincodeInput({hidedigits:false, inputs:5, inputclass:'form-control', named:'input',complete:function(value, e, errorElement){
 				// check the code
                 if(value >= "65535"){
             		$(errorElement).html("Код должен быть меньше 65535");
@@ -26,8 +26,8 @@
                     $('#pincode-output-admin').pincodeInput().data('plugin_pincodeInput').reversePrintText();
             	}
             }});
-            $('#pincode-output-user').pincodeInput({hidedigits:false,inputs:5,inputclass:'form-control-lg', named:'user'});
-            $('#pincode-output-admin').pincodeInput({hidedigits:false,inputs:5,inputclass:'form-control-lg', named:'admin'});
+            $('#pincode-output-user').pincodeInput({hidedigits:false,inputs:5,inputclass:'form-control', named:'user'});
+            $('#pincode-output-admin').pincodeInput({hidedigits:false,inputs:5,inputclass:'form-control', named:'admin'});
             // см 218 строку
         });
     </script>
