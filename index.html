@@ -15,7 +15,7 @@
 
 	<script>
 	$(document).ready(function() {
-		$('#pincode-input').pincodeInput({hidedigits:false, inputs:5, named:'input',complete:function(value, e, errorElement){
+		$('#pincode-input').pincodeInput({hidedigits:false, inputs:5, inputclass:'form-control-lg', named:'input',complete:function(value, e, errorElement){
                 if(value >= "65535"){
             		$(errorElement).html("Код должен быть меньше 65535");
             	} else {
@@ -25,8 +25,8 @@
                     $('#pincode-output-admin').pincodeInput().data('plugin_pincodeInput').reversePrintText();
             	}
             }});
-            $('#pincode-output-user').pincodeInput({hidedigits:false, inputs:5, named:'user'});
-            $('#pincode-output-admin').pincodeInput({hidedigits:false, inputs:5, named:'admin'});
+            $('#pincode-output-user').pincodeInput({hidedigits:false, inputs:5, inputclass:'form-control-lg', named:'user'});
+            $('#pincode-output-admin').pincodeInput({hidedigits:false, inputs:5, inputclass:'form-control-lg', named:'admin'});
         });
     </script>
 </head>
@@ -39,20 +39,20 @@
                     <h2>Активатор допуска</h2>
                     <br>
                     <h4>Ключ</h4>
-                    <div style="width:200px">
+                    <div style="width:300px">
                         <div class="text-danger pincode-input-error"></div>
                         <input type="text" id="pincode-input" value="">
                     </div>
 
                     <br>
                     <h4>Пользователь</h4>
-                    <div style="width:200px">
+                    <div style="width:300px">
                         <input type="text" id="pincode-output-user" value="00000">
                     </div>
 
                     <br>
                     <h4>Администратор</h4>
-                    <div style="width:200px">
+                    <div style="width:300px">
                         <input type="text" id="pincode-output-admin" value="00000" >
                         <!--style="display: none;"-->
                     </div>
