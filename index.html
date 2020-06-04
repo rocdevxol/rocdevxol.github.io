@@ -15,8 +15,7 @@
 
 	<script>
 	$(document).ready(function() {
-		$('#pincode-input').pincodeInput({hidedigits:false, inputs:5, inputclass:'form-control', named:'input',complete:function(value, e, errorElement){
-				// check the code
+		$('#pincode-input').pincodeInput({hidedigits:false, inputs:5, named:'input',complete:function(value, e, errorElement){
                 if(value >= "65535"){
             		$(errorElement).html("Код должен быть меньше 65535");
             	} else {
@@ -26,36 +25,41 @@
                     $('#pincode-output-admin').pincodeInput().data('plugin_pincodeInput').reversePrintText();
             	}
             }});
-            $('#pincode-output-user').pincodeInput({hidedigits:false,inputs:5,inputclass:'form-control', named:'user'});
-            $('#pincode-output-admin').pincodeInput({hidedigits:false,inputs:5,inputclass:'form-control', named:'admin'});
-            // см 218 строку
+            $('#pincode-output-user').pincodeInput({hidedigits:false, inputs:5, named:'user'});
+            $('#pincode-output-admin').pincodeInput({hidedigits:false, inputs:5, named:'admin'});
         });
     </script>
 </head>
 
 <body>
     <div class="container">
-        <h2>Активатор допуска</h2>
-        <br>
-        <h4>Ключ</h4>
-        <div style="width:400px;">
-            <div class="text-danger pincode-input-error"></div>
-            <input type="text" id="pincode-input" value="">
-        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Активатор допуска</h2>
+                    <br>
+                    <h4>Ключ</h4>
+                    <div style="width:200px">
+                        <div class="text-danger pincode-input-error"></div>
+                        <input type="text" id="pincode-input" value="">
+                    </div>
 
-        <br>
-        <h4>Пользователь</h4>
-        <div style="width:400px;">
-            <input type="text" id="pincode-output-user" value="00000">
-        </div>
+                    <br>
+                    <h4>Пользователь</h4>
+                    <div style="width:200px">
+                        <input type="text" id="pincode-output-user" value="00000">
+                    </div>
 
-        <br>
-        <h4>Администратор</h4>
-        <div style="width:400px;">
-            <input type="text" id="pincode-output-admin" value="00000" >
-            <!--style="display: none;"-->
+                    <br>
+                    <h4>Администратор</h4>
+                    <div style="width:200px">
+                        <input type="text" id="pincode-output-admin" value="00000" >
+                        <!--style="display: none;"-->
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
- <!-- https://www.jqueryscript.net/form/telephone-pincode-input-lettering.html -->
+ <!-- https://github.com/fkranenburg/bootstrap-pincode-input -->
 </html>
