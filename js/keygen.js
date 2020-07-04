@@ -1,9 +1,18 @@
 function getKeys() {
-    if (document.getElementById('pincode-input').value.length === 5) {
+ /*   if (document.getElementById('pincode-input').value.length === 5) {
         let user = getUserKey(document.getElementById('pincode-input').value * 1);
         let admin = getAdminKey(document.getElementById('pincode-input').value * 1);
         document.getElementById('pincode-output-user').value = addnull(user);
         document.getElementById('pincode-output-admin').value = addnull(admin);
+    }
+*/
+    
+    if ($('#pincode-input').val().length === 5) {
+        var key = parseInt($('#pincode-input').val());
+        let user = getUserKey(key);
+        let admin = getAdminKey(key);
+        $('#pincode-output-user').val(user);
+        $('#pincode-output-admin').val(admin);
     }
 }
 
